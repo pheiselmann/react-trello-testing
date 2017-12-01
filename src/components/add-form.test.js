@@ -41,6 +41,7 @@ describe('<AddForm />', () => {
         const callback = jest.fn();
         const wrapper = mount(<AddForm onAdd={callback} />);
         wrapper.instance().setEditing(true);
+        wrapper.update();
         wrapper.simulate('submit');
         expect(callback).not.toHaveBeenCalled();
     });
